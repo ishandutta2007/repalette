@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Change image color palette to match a theme">
+  <meta name="color-scheme" content="dark light">
+  <link rel="stylesheet" href="styles.css">
+  <title>Repalette</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="canvas-container">
+      <label>
+        <input type="file" id="file-input" hidden>
+        <canvas width="1920" height="1440"></canvas>
+      </label>
+    </div>
+
+    <div class="controls">
+      <div class="palette-controls">
+        <select class="input" id="palette-select">
+          <option value="-1" disabled selected>Loading...</option>
+        </select>
+
+        <label class="palette-export-container">
+          <textarea id="palette-export" cols="7" rows="10"></textarea>
+          <button class="input">Import/Export</button>
+        </label>
+      </div>
+
+      <div class="palette-outer">
+        <div id="palette">
+          <button id="color-new">+</button>
+        </div>
+      </div>
+
+      <div class="dither-control">
+        <span class="label">
+          Dither strategy
+        </span>
+
+        <select id="dither-select" class="input">
+          <option value="0">None</option>
+          <option value="1" selected>Floyd-Steinberg</option>
+          <option value="2">Atkinson</option>
+          <option value="3">Jarvis, Judice, and Ninke</option>
+          <option value="4">Burkes</option>
+          <option value="5">Sierra</option>
+          <option value="6">Sierra Lite</option>
+        </select>
+      </div>
+
+      <div class="btn-panel">
+        <button class="input primary-btn" id="process-image" disabled>Process</button>
+        <button class="input primary-btn" id="download-image" disabled>Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="module" src="./repalette.js"></script>
+
+</html>
